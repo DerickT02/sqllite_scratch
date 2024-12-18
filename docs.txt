@@ -1,0 +1,8 @@
+SQLLITE_SCRATCH DOCS
+
+Meta commands begin with a .
+.exit - exits the current program
+
+DB commands
+insert
+select

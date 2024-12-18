@@ -14,6 +14,7 @@ InputBuffer * new_input_buffer();
 //void functions
 void print_prompt(){printf("db > ");};
 void read_input(InputBuffer * input_buffer){
+    //getline takes in a char address, a string length, and returns a signed number representing the # of bytes read
     ssize_t bytes_read = getline(&(input_buffer->buffer), &(input_buffer->buffer_length), stdin);
     if(bytes_read <= 0){
         printf("Error reading input");
@@ -26,6 +27,7 @@ void read_input(InputBuffer * input_buffer){
 };
 
 void close_input_buffer(InputBuffer* input_buffer){
+    //free memory
     free(input_buffer->buffer);
     free(input_buffer);
 }
@@ -35,6 +37,8 @@ int main(int argc, char * argv[]){
     while(true){
         print_prompt();
         read_input(input_buffer);
+
+        //Check if user has typed and entered .exit
         if(strcmp(input_buffer->buffer, ".exit") == 0){
             close_input_buffer(input_buffer);
             exit(EXIT_SUCCESS);

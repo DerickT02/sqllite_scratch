@@ -4,5 +4,10 @@ Meta commands begin with a .
 .exit - exits the current program
 
 DB commands
-insert
+insert - insert 1 <username> <email>
+    _____________________________
+    | id       |  integer       | 
+    | username |  varchar(32)   |    
+    | email    |  varchar(255)  |  
+    -----------------------------      
 select

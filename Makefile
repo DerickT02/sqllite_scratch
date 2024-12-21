@@ -3,4 +3,5 @@ CC = gcc
 
 all:
 	${CC} ${SRC_FILES}  -o sqls
-	./sqls
+	./sqls db
+	
